@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import sample.Database.DatabaseHandler;
 
 public class SignUpController {
 
@@ -18,22 +19,22 @@ public class SignUpController {
     private URL location;
 
     @FXML
-    private TextField loginField;
+    private TextField userName_field;
 
     @FXML
-    private PasswordField passwordField;
+    private PasswordField password_field;
 
     @FXML
-    private Button signInButton;
+    private Button signUpButton;
 
     @FXML
-    private TextField surnameField;
+    private TextField lastname_field;
 
     @FXML
-    private TextField nameField;
+    private TextField name_field;
 
     @FXML
-    private TextField countryField;
+    private TextField country_field;
 
     @FXML
     private CheckBox signUpMaleCheckBox;
@@ -42,13 +43,13 @@ public class SignUpController {
     private CheckBox signUpFemaleCheckBox;
 
     @FXML
-    void initialize(ActionEvent event) {
-
-    }
-
-    @FXML
     void initialize() {
+        DatabaseHandler databaseHandler = new DatabaseHandler();
 
+        signUpButton.setOnAction(actionEvent -> {
+            databaseHandler.signUpUser(name_field.getText(), lastname_field.getText(), userName_field.getText(),
+                    password_field.getText(), country_field.getText(), "Male");
+        });
     }
 }
 

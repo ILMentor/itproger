@@ -12,32 +12,32 @@
     <children>
         <AnchorPane layoutY="113.0" prefHeight="287.0" prefWidth="700.0" style="-fx-background-color: #fafafa;">
             <children>
-                <TextField fx:id="loginField" layoutX="24.0" layoutY="84.0" promptText="Login" style="-fx-background-color: #fafafa;">
+                <TextField fx:id="userName_field" layoutX="24.0" layoutY="84.0" promptText="Login" style="-fx-background-color: #fafafa;">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </TextField>
-                <PasswordField fx:id="passwordField" layoutX="402.0" layoutY="84.0" promptText="Password" style="-fx-background-color: #fafafa;">
+                <PasswordField fx:id="password_field" layoutX="402.0" layoutY="84.0" promptText="Password" style="-fx-background-color: #fafafa;">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </PasswordField>
-                <Button fx:id="signInButton" layoutX="248.0" layoutY="234.0" mnemonicParsing="false" onAction="#initialize" prefHeight="39.0" prefWidth="204.0" style="-fx-background-color: #F39C63;" text="Зарегистрироваться" textFill="WHITE">
+                <Button fx:id="signUpButton" layoutX="248.0" layoutY="234.0" mnemonicParsing="false" onAction="#initialize" prefHeight="39.0" prefWidth="204.0" style="-fx-background-color: #F39C63;" text="Зарегистрироваться" textFill="WHITE">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Button>
-            <TextField fx:id="surnameField" layoutX="402.0" layoutY="25.0" promptText="Surname" style="-fx-background-color: #fafafa;">
+            <TextField fx:id="lastname_field" layoutX="402.0" layoutY="25.0" promptText="Surname" style="-fx-background-color: #fafafa;">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="nameField" layoutX="24.0" layoutY="25.0" promptText="Name" style="-fx-background-color: #fafafa;">
+            <TextField fx:id="name_field" layoutX="24.0" layoutY="25.0" promptText="Name" style="-fx-background-color: #fafafa;">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="countryField" layoutX="238.0" layoutY="182.0" promptText="Country" style="-fx-background-color: #fafafa;">
+            <TextField fx:id="country_field" layoutX="238.0" layoutY="182.0" promptText="Country" style="-fx-background-color: #fafafa;">
                <font>
                   <Font size="18.0" />
                </font>
