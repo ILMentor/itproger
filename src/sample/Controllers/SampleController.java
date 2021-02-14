@@ -21,10 +21,10 @@ public class SampleController {
     private URL location;
 
     @FXML
-    private TextField loginField;
+    private TextField login_field;
 
     @FXML
-    private PasswordField passwordField;
+    private PasswordField password_field;
 
     @FXML
     private Button signInButton;
@@ -34,6 +34,18 @@ public class SampleController {
 
     @FXML
     void initialize() {
+
+        signInButton.setOnAction(actionEvent -> {
+            String loginText = login_field.getText().trim();
+            String passwordText = password_field.getText().trim();
+
+            if(!loginText.equals("") && !passwordText.equals(""))
+                loginUser(loginText, passwordText);
+            else
+                // todo Сделать вывод этого сообщения не в консоль, а на форму.
+                System.out.println("Login and password are empty.");
+        });
+
         signUpButton.setOnAction(actionEvent -> {
             signUpButton.getScene().getWindow().hide();
 
@@ -51,5 +63,8 @@ public class SampleController {
             stage.setScene(new Scene(root));
             stage.showAndWait();
         });
+    }
+
+    private void loginUser(String loginText, String passwordText) {
     }
 }
