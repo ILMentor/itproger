@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.HomeController">
     <children>
         <AnchorPane layoutY="113.0" prefHeight="287.0" prefWidth="700.0" style="-fx-background-color: #fafafa;">
          <children>
@@ -17,7 +17,7 @@
             </Label>
             <ImageView fx:id="imageHomeButton" fitHeight="150.0" fitWidth="200.0" layoutX="275.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@assets/home_picture.png" />
+                  <Image url="@../assets/home_picture.png" />
                </image>
             </ImageView>
          </children>
