@@ -36,6 +36,7 @@ public class DatabaseHandler extends Configs {
             preparedStatement.setString(4,password);
             preparedStatement.setString(5,location);
             preparedStatement.setString(6,gender);
+            preparedStatement.executeUpdate();
         } catch (SQLException | ClassNotFoundException throwables) {
             throwables.printStackTrace();
         }
