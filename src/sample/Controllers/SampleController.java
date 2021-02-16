@@ -15,6 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import sample.Database.DatabaseHandler;
 import sample.Database.User;
+import sample.animation.Shake;
 
 public class SampleController {
 
@@ -36,6 +37,10 @@ public class SampleController {
     @FXML
     private Button signUpButton;
 
+    FXMLLoader loader = new FXMLLoader();
+    Parent root;
+    Stage stage = new Stage();
+
     @FXML
     void initialize() {
 
@@ -46,14 +51,12 @@ public class SampleController {
             if(!loginText.equals("") && !passwordText.equals(""))
                 loginUser(loginText, passwordText);
             else
-                // todo Сделать вывод этого сообщения не в консоль, а на форму.
                 System.out.println("Login and password are empty.");
         });
 
         signUpButton.setOnAction(actionEvent -> {
             signUpButton.getScene().getWindow().hide();
 
-            FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/sample/Views/signUp.fxml"));
 
             try {
@@ -62,8 +65,7 @@ public class SampleController {
                 exception.printStackTrace();
             }
 
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
+            root = loader.getRoot();
             stage.setScene(new Scene(root));
             stage.showAndWait();
         });
@@ -88,7 +90,25 @@ public class SampleController {
             counter++;
         }
 
-        if(counter >= 1)
-            System.out.println("Success.");
+        if(counter >= 1) {
+
+            signUpButton.getScene().getWindow().hide();
+            loader.setLocation(getClass().getResource("/sample/Views/app.fxml"));
+            try {
+                loader.load();
+            } catch (IOException exception) {
+                exception.printStackTrace();
+            }
+
+            root = loader.getRoot();
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        }
+        else {
+            Shake userLoginAnimation = new Shake(login_field);
+            Shake userPasswordAnimation = new Shake(password_field);
+            userLoginAnimation.playAnimation();
+            userPasswordAnimation.playAnimation();
+        }
     }
 }
